@@ -1,0 +1,12 @@
+name = "animalguardiannetwork-org"
+type = "webpack"
+account_id = "98288619169b23339dc74ce53fa0b5f1"
+workers_dev = true
+
+[site]
+bucket = "./public"
+
+[env.production]
+name="animalguardiannetwork"
+zone_id = "6fb266247353f0a3a7874770c161f5de"
+route = "animalguardiannetwork.org/*"
