@@ -245,7 +245,7 @@
   }
 
   /* responsive iframe with a 16:9 aspect ratio
-      thanks https://css-tricks.com/responsive-iframes/
+      thank you: https://css-tricks.com/responsive-iframes/
   */
   lite-youtube::after {
       content: "";
@@ -287,6 +287,67 @@
   lite-youtube.lyt-activated > .lty-playbtn {
       opacity: 0;
       pointer-events: none;
+  }
+
+  /* Fundraising Thermometer
+     thank you: RobotBalloon (https://codepen.io/robotballoon/pen/Fjnyp) */
+
+  .agn__therm__wrap {
+
+  }
+
+  #countdown-wrap {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    font-family: arial;
+    max-width: 650px;
+    margin: 150px auto 300px;
+  }
+  #goal {
+    font-size: 48px;
+    text-align: right;
+    color: #FFF;
+  }
+  @media only screen and (max-width: 640px) {
+    #goal {
+      text-align: center;
+    }
+  }
+  #glass {
+    width: 100%;
+    height: 20px;
+    background: #c7c7c7;
+    border-radius: 10px;
+    float: left;
+    overflow: hidden;
+  }
+  #progress {
+    float: left;
+    width: 16%;
+    height: 20px;
+    background: #FF5D50;
+    z-index: 333;
+  }
+  .goal-stat {
+    width: 25%;
+    padding: 10px;
+    float: left;
+    margin: 0;
+    color: #FFF;
+  }
+  @media only screen and (max-width: 640px) {
+    .goal-stat {
+      width: 50%;
+      text-align: center;
+    }
+  }
+  .goal-number,
+  .goal-label {
+    display: block;
+  }
+  .goal-number {
+    font-weight: bold;
   }
 
   /****************************************/
@@ -847,6 +908,29 @@
           <script>gl=document.createElement('script');gl.src='https://secure.givelively.org/widgets/simple_donation/animal-guardian-network-inc.js?show_suggested_amount_buttons=false&show_in_honor_of=false&address_required=false&has_required_custom_question=false';document.getElementsByTagName('head')[0].appendChild(gl);</script><div id="give-lively-widget" class="gl-simple-donation-widget"></div>
           <!-- End Give Lively Fundraising Widget -->
           <p>​Please consider making a donation to our healing ranch &amp; sanctuary. We really need your continued support. Your donation helps end suffering. Visit our <a href="help.html">donations page to see how funds are used.</a></p>
+          <div id=countdown-wrap>
+            <div id="goal">$10,000</div>
+            <div id="glass">
+              <div id="progress">
+              </div>
+            </div>
+            <div class="goal-stat">
+              <span class="goal-number">16%</span>
+              <span class="goal-label">Funded</span>
+            </div>
+            <div class="goal-stat">
+              <span class="goal-number">$1,640</span>
+              <span class="goal-label">Raised</span>
+            </div>
+            <div class="goal-stat">
+              <span class="goal-number"><div id="countdown"></div></span>
+              <span class="goal-label">Days to Go</span>
+            </div>
+            <div class="goal-stat">
+              <span class="goal-number">38</span>
+              <span class="goal-label">Sponsors</span>
+            </div>
+          </div>
         </div>
         <blockquote><span aria-hidden="true" class="fa fa-quote-left"></span> Animal Guardian Network is not what you may think — because we’re not like any place you’ve ever known. <span aria-hidden="true" class="fa fa-quote-right"></span></blockquote>
         <lite-youtube videoid="UME1L1B-P4A" style="background-image: url('https://i.ytimg.com/vi/UME1L1B-P4A/hqdefault.jpg');">
