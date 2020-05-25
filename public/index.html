@@ -290,64 +290,45 @@
   }
 
   /* Fundraising Thermometer
-     thank you: RobotBalloon (https://codepen.io/robotballoon/pen/Fjnyp) */
+     thank you: RobotBalloon (https://codepen.io/robotballoon/pen/Fjnyp)
+     adapted to use agn__flex layout and styles instead of 25% width */
 
   .agn__therm__wrap {
-
-  }
-
-  #countdown-wrap {
     width: 100%;
-    height: 300px;
-    padding: 20px;
-    font-family: arial;
     max-width: 650px;
+    height: 300px;
+    padding: 2rem;
     margin: 150px auto 300px;
   }
-  #goal {
-    font-size: 48px;
-    text-align: right;
-    color: #FFF;
+  .agn__therm__goal {
+    font-size: 3em; /* 48px */
+    text-align: center;
   }
-  @media only screen and (max-width: 640px) {
-    #goal {
-      text-align: center;
-    }
-  }
-  #glass {
+  .agn__therm__glass {
     width: 100%;
     height: 20px;
-    background: #c7c7c7;
-    border-radius: 10px;
+    background: #c7c7c7; /* change? */
+    border-radius: 1rem;
     float: left;
     overflow: hidden;
   }
-  #progress {
+  .agn__therm__glass__progress {
     float: left;
-    width: 16%;
+    width: 55%; /* 5/25 complete: 64/115 55% */
     height: 20px;
-    background: #FF5D50;
+    background: #FF5D50; /* change? */
     z-index: 333;
   }
-  .goal-stat {
-    width: 25%;
-    padding: 10px;
-    float: left;
+  .agn__therm__stat {
     margin: 0;
-    color: #FFF;
+    padding: 1rem;
   }
-  @media only screen and (max-width: 640px) {
-    .goal-stat {
-      width: 50%;
-      text-align: center;
-    }
-  }
-  .goal-number,
-  .goal-label {
-    display: block;
-  }
-  .goal-number {
+  .agn__therm__stat__number {
     font-weight: bold;
+  }
+  .agn__therm__stat__label,
+  .agn__therm__stat__number {
+    display: block;
   }
 
   /****************************************/
@@ -775,6 +756,9 @@
       background-image: url(img/agn_sunset_1280x851.jpg);
       background-size: cover;
     }
+    .agn__therm__goal {
+      text-align: right;
+    }
     .agn__map__img {
       width: 70%;
     }
@@ -908,27 +892,25 @@
           <script>gl=document.createElement('script');gl.src='https://secure.givelively.org/widgets/simple_donation/animal-guardian-network-inc.js?show_suggested_amount_buttons=false&show_in_honor_of=false&address_required=false&has_required_custom_question=false';document.getElementsByTagName('head')[0].appendChild(gl);</script><div id="give-lively-widget" class="gl-simple-donation-widget"></div>
           <!-- End Give Lively Fundraising Widget -->
           <p>​Please consider making a donation to our healing ranch &amp; sanctuary. We really need your continued support. Your donation helps end suffering. Visit our <a href="help.html">donations page to see how funds are used.</a></p>
-          <div id=countdown-wrap>
-            <div id="goal">$10,000</div>
-            <div id="glass">
-              <div id="progress">
+          <div class="agn__therm__wrap">
+            <div class="agn__therm__goal">$XXX total</div>
+            <div class="agn__therm__glass">
+              <div class="agn__therm__glass__progress">
               </div>
             </div>
-            <div class="goal-stat">
-              <span class="goal-number">16%</span>
-              <span class="goal-label">Funded</span>
-            </div>
-            <div class="goal-stat">
-              <span class="goal-number">$1,640</span>
-              <span class="goal-label">Raised</span>
-            </div>
-            <div class="goal-stat">
-              <span class="goal-number"><div id="countdown"></div></span>
-              <span class="goal-label">Days to Go</span>
-            </div>
-            <div class="goal-stat">
-              <span class="goal-number">38</span>
-              <span class="goal-label">Sponsors</span>
+            <div class="agn__flex">
+              <div class="agn__flex__items">
+                <span class="agn__therm__stat__number">55%</span>
+                <span class="agn__therm__stat__label">Funded</span>
+              </div>
+              <div class="agn__flex__items">
+                <span class="agn__therm__stat__number">64</span>
+                <span class="agn__therm__stat__label">Panels</span>
+              </div>
+              <div class="agn__flex__items">
+                <span class="agn__therm__stat__number">$XXX</span>
+                <span class="agn__therm__stat__label">so far</span>
+              </div>
             </div>
           </div>
         </div>
