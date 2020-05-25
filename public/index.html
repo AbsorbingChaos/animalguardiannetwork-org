@@ -245,7 +245,7 @@
   }
 
   /* responsive iframe with a 16:9 aspect ratio
-      thanks https://css-tricks.com/responsive-iframes/
+      thank you: https://css-tricks.com/responsive-iframes/
   */
   lite-youtube::after {
       content: "";
@@ -287,6 +287,51 @@
   lite-youtube.lyt-activated > .lty-playbtn {
       opacity: 0;
       pointer-events: none;
+  }
+
+  /* Fundraising Thermometer
+     thank you: RobotBalloon (https://codepen.io/robotballoon/pen/Fjnyp)
+     adapted to use agn__flex layout and styles instead of 25% width */
+
+  .agn__therm__wrap {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+  .agn__therm__flex {
+    width: 100%;
+    padding: 1rem;
+  }
+  .agn__therm__goal {
+    font-size: 2.25em; /* match H3 */
+    text-align: center;
+    padding: 2rem;
+  }
+  .agn__therm__glass {
+    width: 100%;
+    height: 20px;
+    background: #c7c7c7; /* change? */
+    border-radius: 1rem;
+    float: left;
+    overflow: hidden;
+  }
+  .agn__therm__glass__progress {
+    float: left;
+    width: 55%; /* 5/25 complete: 64/115 55% */
+    height: 20px;
+    background: #FF5D50; /* change? */
+    z-index: 333;
+  }
+  .agn__therm__stat {
+    margin: 0;
+    padding: 1rem;
+  }
+  .agn__therm__stat__number {
+    font-weight: bold;
+  }
+  .agn__therm__stat__label,
+  .agn__therm__stat__number {
+    display: block;
   }
 
   /****************************************/
@@ -847,6 +892,28 @@
           <script>gl=document.createElement('script');gl.src='https://secure.givelively.org/widgets/simple_donation/animal-guardian-network-inc.js?show_suggested_amount_buttons=false&show_in_honor_of=false&address_required=false&has_required_custom_question=false';document.getElementsByTagName('head')[0].appendChild(gl);</script><div id="give-lively-widget" class="gl-simple-donation-widget"></div>
           <!-- End Give Lively Fundraising Widget -->
           <p>​Please consider making a donation to our healing ranch &amp; sanctuary. We really need your continued support. Your donation helps end suffering. Visit our <a href="help.html">donations page to see how funds are used.</a></p>
+          <h3>Fence Panel Progress</h3>
+          <div class="agn__therm__wrap">
+            <div class="agn__therm__goal">$23,000 Total</div> <!-- $200 per panel -->
+            <div class="agn__therm__glass">
+              <div class="agn__therm__glass__progress">
+              </div>
+            </div>
+            <div class="agn__flex agn__therm__flex">
+              <div class="agn__flex__items">
+                <span class="agn__therm__stat__number">55%</span>
+                <span class="agn__therm__stat__label">Funded</span>
+              </div>
+              <div class="agn__flex__items">
+                <span class="agn__therm__stat__number">64 / 115</span>
+                <span class="agn__therm__stat__label">Panels</span>
+              </div>
+              <div class="agn__flex__items">
+                <span class="agn__therm__stat__number">$12,800</span>
+                <span class="agn__therm__stat__label">So far</span>
+              </div>
+            </div>
+          </div>
         </div>
         <blockquote><span aria-hidden="true" class="fa fa-quote-left"></span> Animal Guardian Network is not what you may think — because we’re not like any place you’ve ever known. <span aria-hidden="true" class="fa fa-quote-right"></span></blockquote>
         <lite-youtube videoid="UME1L1B-P4A" style="background-image: url('https://i.ytimg.com/vi/UME1L1B-P4A/hqdefault.jpg');">
